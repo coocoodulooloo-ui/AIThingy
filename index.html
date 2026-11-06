@@ -1,82 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
+  <head>
     <title>RGB Background</title>
 
     <style>
-        body {
-            animation: rainbow 5s infinite;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
+      body {
+        animation: rainbow 5s infinite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
 
-        @keyframes rainbow {
-            0% { background: red; }
-            20% { background: orange; }
-            40% { background: yellow; }
-            60% { background: green; }
-            80% { background: blue; }
-            100% { background: purple; }
+      @keyframes rainbow {
+        0% {
+          background: red;
         }
+        20% {
+          background: orange;
+        }
+        40% {
+          background: yellow;
+        }
+        60% {
+          background: green;
+        }
+        80% {
+          background: blue;
+        }
+        100% {
+          background: purple;
+        }
+      }
 
-        .chat {
-            display: flex;
-            align-items: center;
-            background: white;
-            border-radius: 50px;
-            padding: 10px;
-            width: 550px;
-        }
+      .chat {
+        display: flex;
+        align-items: center;
+        background: white;
+        border-radius: 50px;
+        padding: 10px;
+        width: 550px;
+      }
 
-        input {
-            flex: 1;
-            height: 65px;
-            font-size: 25px;
-            border: none;
-            outline: none;
-            padding-left: 20px;
-            border-radius: 50px;
-        }
+      input {
+        flex: 1;
+        height: 65px;
+        font-size: 25px;
+        border: none;
+        outline: none;
+        padding-left: 20px;
+        border-radius: 50px;
+      }
 
-        button {
-            width: 60px;
-            height: 60px;
-            border: none;
-            border-radius: 50%;
-            background: #19a7ce;
-            color: white;
-            font-size: 28px;
-            cursor: pointer;
-        }
+      button {
+        width: 60px;
+        height: 60px;
+        border: none;
+        border-radius: 50%;
+        background: #19a7ce;
+        color: white;
+        font-size: 28px;
+        cursor: pointer;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <div class="chat">
-        <input id="message" type="text" placeholder="Message...">
-        <button onclick="sendMessage()">➤</button>
+      <input id="message" type="text" placeholder="Message..." />
+      <button onclick="sendMessage()">➤</button>
     </div>
 
     <script>
-        function sendMessage() {
-            let message = document.getElementById("message").value;
+      function sendMessage() {
+        let message = document.getElementById("message").value;
 
-            if (message.trim() !== "") {
-                alert("You sent: " + message);
-                document.getElementById("message").value = "";
-            }
+        if (message.trim() !== "") {
+          alert("You sent: " + message);
+          document.getElementById("message").value = "";
         }
+      }
 
-        document.getElementById("message").addEventListener("keydown", function(event) {
-            if (event.key === "Enter") {
-                sendMessage();
-            }
+      document
+        .getElementById("message")
+        .addEventListener("keydown", function (event) {
+          if (event.key === "Enter") {
+            sendMessage();
+          }
         });
     </script>
-
-</body>
+  </body>
 </html>
