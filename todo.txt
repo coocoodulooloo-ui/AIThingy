@@ -1,1 +1,1 @@
-Ue Ollama model for ai LLM
+Use Ollama model for ai LLM
